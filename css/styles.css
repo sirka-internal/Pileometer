@@ -1444,7 +1444,7 @@ margin-top: 25px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: url('/img/polygon.svg') no-repeat center center;
+  background: url('../img/polygon.svg') no-repeat center center;
   background-size: 64px 64px;
   border: none;
   width: 80px;
@@ -1624,7 +1624,7 @@ text-transform: uppercase;
    .footer-background {
     width: 335px;
 height: 461px;
-background-image: url(/img/vector_7.png);
+background-image: url(../img/vector_7.png);
 padding: 30px;
    }
    .footer-features {
