@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+body{
+    font-family: "DM Sans", sans-serif;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+ul, ol, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* banner */
+.hero-banner {
+width: 375px;
+height: 670px;
+    padding-left: 20px;
+    padding-right: 20px;
+border-bottom-right-radius: 20px;
+border-bottom-left-radius: 20px;
+
+
+}
+.header {
+    padding-top: 9px;
+    display: flex;
+    justify-content: space-between;
+}
+.header-button {
+    width: 139px;
+height: 32px;
+top: 9px;
+left: 216px;
+gap: 10px;
+border-radius: 53px;
+padding-top: 9px;
+padding-right: 11px;
+padding-bottom: 9px;
+padding-left: 11px;
+background: #000000;
+font-family: "Rajdhani", sans-serif;
+font-weight: 600;
+font-size: 12px;
+line-height: 120%;
+letter-spacing: 0;
+text-transform: uppercase;
+color: #FFFFFF;
+}
+.paywall-title {
+font-weight: 500;
+font-size: 26px;
+line-height: 110.00000000000001%;
+letter-spacing: 0;
+vertical-align: middle;
+margin-top: 30px;
+}
+.paywall-choose {
+font-weight: 400;
+font-size: 20px;
+line-height: 110.00000000000001%;
+letter-spacing: 0;
+vertical-align: middle;
+color: #00C742;
+margin-top: 15px;
+}
