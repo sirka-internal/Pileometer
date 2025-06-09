@@ -58,7 +58,7 @@ text-transform: uppercase;
 color: #FFFFFF;
 }
 .banner {
-    background-image: url("/img/vector_6.png");
+    background-image: url("../img/vector_6.png");
     width: 335px;
 height: 527px;
 border-top-right-radius: 14px;
