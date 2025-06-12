@@ -1444,10 +1444,11 @@ $(document).ready(function(){
     const buttons = document.querySelectorAll('.main-button');
 
     const isGithubPages = window.location.hostname.includes('github.io');
-
+    console.log("window.location.hostname", window.location.hostname)
+console.log("isGithubPages", isGithubPages)
     // Автоматично визначає назву репозиторію (перший сегмент шляху)
     const repoName = isGithubPages ? window.location.pathname.split('/')[1] : '';
-
+console.log("repoName", repoName)
     buttons.forEach(button => {
       const originalHref = button.getAttribute('href');
 
