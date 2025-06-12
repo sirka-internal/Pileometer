@@ -1,19 +1,18 @@
-<svg class="banner-bg" width="100%" height="527" preserveAspectRatio="none" viewBox="0 0 335 527" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <path d="
-    M20,0
-    H315
-    A20,20 0 0 1 335,20
-    V526.5
-    H316.606V517.976H290.162V526.5H270.894V517.976H243.156V526.5H223.456V503.354
-    L223.476 502.853H205.775V493.504H178.037V502.853H158.338V493.504H134.05V502.853H115.938V526.5H93.6504V517.976H68.9316V526.5H49.2295V517.976H24.5127V526.5
-    H0.5V20
-    A20,20 0 0 1 20,0
-    Z" 
-    fill="url(#paint0_linear_157_398)" stroke="black" />
-  <defs>
-    <linearGradient id="paint0_linear_157_398" x1="177.5" y1="0" x2="168" y2="503.5" gradientUnits="userSpaceOnUse">
-      <stop stop-color="white"/>
-      <stop offset="1" stop-color="#E8E3CE"/>
-    </linearGradient>
-  </defs>
+<svg width="335" height="527" preserveAspectRatio="none" viewBox="0 0 335 527" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_422_8)">
+<path d="M0.5 0.5V526.5H24.5127V517.976H49.2295V526.5H68.9316V517.976H93.6504V526.5H115.938V502.853H134.05V493.504H158.338V502.853H178.037V493.504H205.775V502.853H223.476L223.475 503.354L223.456 526.5H243.156V517.976H270.894V526.5H290.162V517.976H316.606V526.5H334.5V0.5H0.5Z" fill="url(#paint0_linear_422_8)" stroke="black"/>
+<mask id="path-3-inside-1_422_8" fill="white">
+<path d="M0 14C0 6.26801 6.26801 0 14 0H321C328.732 0 335 6.26801 335 14V524H0V14Z"/>
+</mask>
+<path d="M-1 14C-1 5.71573 5.71573 -1 14 -1H321C329.284 -1 336 5.71573 336 14H334C334 6.8203 328.18 1 321 1H14C6.8203 1 1 6.8203 1 14H-1ZM335 524H0H335ZM-1 524V14C-1 5.71573 5.71573 -1 14 -1V1C6.8203 1 1 6.8203 1 14V524H-1ZM321 -1C329.284 -1 336 5.71573 336 14V524H334V14C334 6.8203 328.18 1 321 1V-1Z" fill="black" mask="url(#path-3-inside-1_422_8)"/>
+</g>
+<defs>
+<linearGradient id="paint0_linear_422_8" x1="177.5" y1="-8.68124e-07" x2="168" y2="503.5" gradientUnits="userSpaceOnUse">
+<stop stop-color="white"/>
+<stop offset="1" stop-color="#E8E3CE"/>
+</linearGradient>
+<clipPath id="clip0_422_8">
+<path d="M0 14C0 6.26803 6.26801 0 14 0H321C328.732 0 335 6.26801 335 14V527H0V14Z" fill="white"/>
+</clipPath>
+</defs>
 </svg>
