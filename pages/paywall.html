@@ -115,9 +115,15 @@
 
 
 </div>
+
+<div class="button-wrapper">
+<button  class="main-button">
+Continue to Payment
+</button>
+</div>
     </section>
 
-<section class="your_plan container">
+<!-- <section class="your_plan container">
   <h2 class="your_plan_title">Your Plan</h2>
   <div class="your_plan_checkout-wrapper">
     <div class="your_plan_checkout-price">
@@ -156,7 +162,7 @@ Pay now
 </div>
   </div>
 
-</section>
+</section> -->
 
 
   <footer class="footer footer-container">
@@ -198,14 +204,12 @@ Pay now
       }
     },
     {
-      root: null, // viewport
+      root: null,
       threshold: 0,
     }
   );
 
   observer.observe(footer);
-
-  // Скрол до верху
   scrollBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
@@ -214,24 +218,33 @@ Pay now
  
 <script>
 const buttons = document.querySelectorAll('.paywall-plan-button');
-// const paywallPlanWrapper = document.querySelectorAll('.paywall-plan-wrapper')
-const yourPlan = document.querySelector('.your_plan');
 const checkoutWrapper = document.querySelector('.your_plan_checkout-price');
+
+let selectedPlanHTML = '';
 
 buttons.forEach(button => {
   button.addEventListener('click', () => {
-    
     buttons.forEach(btn => btn.classList.remove('active-plan'));
     button.classList.add('active-plan');
 
-   yourPlan.style.display = 'block';
- const wrapperContent = button.querySelector('.paywall-plan-wrapper');
+    const wrapperContent = button.querySelector('.paywall-plan-wrapper');
+    if (wrapperContent) {
+      selectedPlanHTML = wrapperContent.innerHTML;
 
-     if (wrapperContent) {
-          checkoutWrapper.innerHTML = wrapperContent.innerHTML;
-        }
+      if (checkoutWrapper) {
+        checkoutWrapper.innerHTML = selectedPlanHTML;
+      }
+      localStorage.setItem('selectedPlan', selectedPlanHTML);
+    }
   });
 });
+
+const continueBtn = document.querySelector('.main-button');
+if (continueBtn) {
+  continueBtn.addEventListener('click', () => {
+    window.location.href = 'checkout.html';
+  });
+}
 </script>
 
 </body>

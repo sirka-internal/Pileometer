@@ -35,12 +35,12 @@ margin-right: auto;
   .container {
     padding-left: 0px;
 padding-right: 0px;
-max-width: 900px;
+/* max-width: 900px; */
 }
 }
 @media (min-width: 1920px) {
   .container {
-max-width: 1038px;
+/* max-width: 1038px; */
 }
 }
 
@@ -81,6 +81,8 @@ color: #FFFFFF;
   position: relative;
   display: block;
   text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 }
 .button-wrapper::after {
   content: "";
@@ -153,6 +155,7 @@ margin-top: 15px;
 }
 .paywall-plan-block {
   margin-top: 20px;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   gap: 33px;
@@ -169,6 +172,7 @@ font-size: 18px;
 line-height: 110.00000000000001%;
 letter-spacing: 0;
 vertical-align: middle;
+text-align: left;
 
 }
 .paywall-plan-name-description {
@@ -186,6 +190,7 @@ font-size: 16px;
 line-height: 110.00000000000001%;
 letter-spacing: 0;
 vertical-align: middle;
+text-align: right;
 
 }
 .paywall-plan-price-perday {
@@ -280,7 +285,7 @@ font-weight: 700;
 
 /*your_plan*/
 .your_plan {
-  display: none;
+  /* display: none; */
   margin-top: 80px;
 }
 .your_plan_title {
@@ -310,6 +315,11 @@ vertical-align: middle;
 
 }
 
+@media (min-width: 768px) {
+.button-wrapper {
+    width: 60%;
+}
+}
  @media (min-width: 1440px) {
   .footer-container {
     padding-left: 40px;
@@ -392,7 +402,7 @@ padding: 16px 38px;
         font-size: 24px;
     }
 
-    
+
 }
 
 
