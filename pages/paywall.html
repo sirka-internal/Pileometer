@@ -218,6 +218,7 @@ Pay now
   <img class="footer-bg" src="/img/bg_mobile_footer.svg" alt="banner background">
 </picture>
     </div>
+<script src="/js/revenuecat.js"></script>
 
     <script>
   const footer = document.querySelector('.footer');
@@ -306,7 +307,9 @@ if (continueBtn) {
     window.location.href = 'checkout.html';
   });
 }
+setTimeout(() => {
+    console.log(window.offerings)
+}, 2000)
 </script>
-
 </body>
 </html>
