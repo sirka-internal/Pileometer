@@ -137,32 +137,10 @@
     <div class="your_plan_checkout-price">
 
     </div>
-      <div class="paywall-plan-ckeck-list">
-    <span class="paywall-plan-ckeck-block">
-<img src="../img/ic_round-check.svg" alt="round-check">
-<p>Save 25% vs monthly</p>
-    </span>
-        <span class="paywall-plan-ckeck-block">
-<img src="../img/ic_round-check.svg" alt="round-check">
-<p>The smart builder’s choice</p>
-    </span>
-  </div>
 <div class="your_plan_checkout">
   <input/>
 </div>
-  <div class="paywall-plan-ckeck-list">
-    <span class="paywall-plan-ckeck-block">
-<img src="../img/ic_round-check.svg" alt="round-check">
-<p>3 days free. Cancel anytime before the trial ends.</p>
-    </span>
-        <span class="paywall-plan-ckeck-block">
-<img src="../img/ic_round-check.svg" alt="round-check">
-<p>We’ll remind you before any charges — no surprises.</p>
-    </span>
-    <span class="paywall-plan-ckeck-block">
-      <p class="paywall-plan-then">(Then $40.48 after 3 days if not canceled)</p>
-    </span>
-  </div>
+
 <div class="button-wrapper">
 <button  class="main-button">
 Pay now
@@ -172,12 +150,14 @@ Pay now
 
 </section>
 
+ <div id="lottie"></div> 
 
-  <footer class="footer container">
-    <div class="footer-wrapper">
-    <button id="scrollTopBtn" class="scroll-to-top"><img src="..//img/ep_arrow-up-fixy.svg" alt=""></button>
+  </main>
+
+  <!-- <footer class="footer">
+
     <div class="footer-background">
-        <img class="footer-logo" src="..//img/logo.svg" alt="logo">
+        <img src="img/logo.svg" alt="logo">
         <p class="footer-features">Features</p>
         <ul class="footer-list-link-wraper">
             <li class="footer-list-link">App Features</li>
@@ -190,41 +170,12 @@ Pay now
         </ul>
         <div class="footer-policy-wraper">
 <p class="footer-policy">Privacy Policy</p>
-<p class="footer-policy footer-rights-reserved">© 2025 Pile[o]meter.</p>
+<p class="footer-rights-reserved">© 2025 Pile[o]meter.</p>
         </div>
     </div>
-<picture  class="footer-bg">
-  <source srcset="..//img/bg_desktop_footer.svg" media="(min-width: 1024px)">
-  <img class="footer-bg" src="..//img/bg_mobile_footer.svg" alt="banner background">
-</picture>
-    </div>
 
-    <script>
-  const footer = document.querySelector('.footer');
-  const scrollBtn = document.getElementById('scrollTopBtn');
 
-  const observer = new IntersectionObserver(
-    ([entry]) => {
-      if (entry.isIntersecting) {
-        scrollBtn.classList.remove('sticky');
-      } else {
-        scrollBtn.classList.add('sticky');
-      }
-    },
-    {
-      root: null, // viewport
-      threshold: 0,
-    }
-  );
-
-  observer.observe(footer);
-
-  // Скрол до верху
-  scrollBtn.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
-</script>
-  </footer>
+  </footer> -->
  
 <script>
 const buttons = document.querySelectorAll('.paywall-plan-button');
@@ -248,5 +199,20 @@ buttons.forEach(button => {
 });
 </script>
 
+
+
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script> 
+  lottie.loadAnimation({ 
+    container: document.getElementById('lottie'), 
+    renderer: 'svg', 
+    loop: true, 
+    autoplay: true, 
+    path: 'Lottie.json', // Шлях до вашого JSON-файлу 
+    width: '100%', 
+    height: '100%' 
+  });
+ </script> 
 </body>
 </html>
