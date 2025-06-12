@@ -30,7 +30,7 @@
 App for Builders<br class="banner-builders-title-second"> and Collectors</h2>
 <p class="banner-builders-description">Find the right parts in seconds with the most advanced AI scanner, оrganize your entire collection, and build more from what you already own.</p>
 <div class="button-wrapper button-wrapper-desktop">
-<a href="/pages/paywall.html" class="main-button">
+<a href="pages/paywall.html" class="main-button">
 Unleash the Powers of Your Pile
 </a>
 </div>
@@ -1441,14 +1441,15 @@ $(document).ready(function(){
 </script>
 <script>
   document.addEventListener('DOMContentLoaded', function () {
+    const screenWidth = window.innerWidth;
+console.log(`screenWidth: ${screenWidth}px`);
     const buttons = document.querySelectorAll('.main-button');
 
     const isGithubPages = window.location.hostname.includes('github.io');
-    console.log("window.location.hostname", window.location.hostname)
-console.log("isGithubPages", isGithubPages)
+
     // Автоматично визначає назву репозиторію (перший сегмент шляху)
     const repoName = isGithubPages ? window.location.pathname.split('/')[1] : '';
-console.log("repoName", repoName)
+
     buttons.forEach(button => {
       const originalHref = button.getAttribute('href');
 
