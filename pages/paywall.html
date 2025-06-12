@@ -15,20 +15,142 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<style>
+  #lottie { 
+  width: 30%; /* тут міняти розмір щоб підігнати потреби */ 
+  max-width: 373px; /* Обмеження максимальної ширини */ 
+  aspect-ratio: 373 / 744; /* Зберігає пропорцію */ 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  background: transparent; 
+  border-radius: 25px; 
+  border: 2px solid #ffffff; 
+  overflow: hidden;  
+} 
+</style>
+ <script src="https://unpkg.com/lottie-web@5.10.2/build/player/lottie.min.js"></script>
 </head>
 <body>
-<section class="hero-banner">
+<section class="hero-paywall-banner container">
 <div class="header">
   <img src="../img/logo.svg" alt="logo">
   <button class="header-button">
     Get your pile[o]metr 
   </button>
 </div>
-<h1 class="paywall-title">Unlock the full potential of your bricks pile with Pile[o]meter</h1>
-<p class="paywall-choose">Choose your plan</p>
+
 </section>
 
   <main>
+    <section class="paywall-plan container">
+<h1 class="paywall-title">Unlock the full potential of your bricks pile with Pile[o]meter</h1>
+<p class="paywall-choose">Choose your plan</p>
+<div class="paywall-plan-block">
+<button class="paywall-plan-month paywall-plan-button">
+  <div class="paywall-plan-wrapper">
+  <div class="paywall-plan-name-block">
+      <p class="paywall-plan-name-title">1 Month</p>
+      <p class="paywall-plan-name-description">Let’s Build a Bit</p>
+  </div>
+  <div class="paywall-plan-price-block">
+      <p class="paywall-plan-price-title">$17.99</p>
+      <p class="paywall-plan-price-perday">$0.59 / day</p>
+  </div>
+  </div>
+
+</button>
+<button class="paywall-plan-three-month paywall-plan-button">
+  <div class="paywall-plan-wrapper">
+  <div class="paywall-plan-name-block">
+      <p class="paywall-plan-name-title">3 Month</p>
+      <p class="paywall-plan-name-description">Build Rush</p>
+  </div>
+  <div class="paywall-plan-price-block">
+      <p class="paywall-plan-price-title">$40.48</p>
+      <p class="paywall-plan-price-perday">$0.44 / day</p>
+  </div>
+  </div>
+  <div class="paywall-plan-ckeck-list">
+    <span class="paywall-plan-ckeck-block">
+<img src="../img/ic_round-check.svg" alt="round-check">
+<p>Save 25% vs monthly</p>
+    </span>
+        <span class="paywall-plan-ckeck-block">
+<img src="../img/ic_round-check.svg" alt="round-check">
+<p>The smart builder’s choice</p>
+    </span>
+  </div>
+  <div class="paywall-plan-three-month-about">
+<p class="paywall-plan-three-month-about-titile">What you unlock:</p>
+<ul class="paywall-plan-three-month-list-block">
+  <li class="paywall-plan-three-month-list">Unlimited smart scans & visual search</li>
+    <li class="paywall-plan-three-month-list">Build suggestions based on your own parts</li>
+      <li class="paywall-plan-three-month-list">Real inventory tracking linked to your storage</li>
+ <li class="paywall-plan-three-month-list">Export to Rebrickable, CSV & more</li>
+ <li class="paywall-plan-three-month-list">Rebuild sets, sell extras</li>
+ <li class="paywall-plan-three-month-list bold">Share with up to 6 family members — no extra cost</li>
+    </ul>
+  </div>
+</button>
+<button class="paywall-plan-year paywall-plan-button">
+  <div class="paywall-plan-wrapper">
+  <div class="paywall-plan-name-block">
+      <p class="paywall-plan-name-title">1 Year</p>
+      <p class="paywall-plan-name-description">The Master Builder Plan</p>
+  </div>
+  <div class="paywall-plan-price-block">
+      <p class="paywall-plan-price-title">$89.99</p>
+      <p class="paywall-plan-price-perday">$0.24 / day</p>
+  </div>
+  </div>
+  <div class="paywall-plan-ckeck-list">
+    <span class="paywall-plan-ckeck-block">
+<img src="../img/ic_round-check.svg" alt="round-check">
+<p>Save 58% vs monthly</p>
+    </span>
+        <span class="paywall-plan-ckeck-block">
+<img src="../img/ic_round-check.svg" alt="round-check">
+<p>Best value for active builders</p>
+    </span>
+  </div>
+</button>
+
+  <div class="paywall-plan-ckeck-list">
+    <span class="paywall-plan-ckeck-block">
+<img src="../img/ic_round-check.svg" alt="round-check">
+<p>3 days free. Cancel anytime before the trial ends.</p>
+    </span>
+        <span class="paywall-plan-ckeck-block">
+<img src="../img/ic_round-check.svg" alt="round-check">
+<p>We’ll remind you before any charges — no surprises.</p>
+    </span>
+  </div>
+
+
+</div>
+    </section>
+
+<section class="your_plan container">
+  <h2 class="your_plan_title">Your Plan</h2>
+  <div class="your_plan_checkout-wrapper">
+    <div class="your_plan_checkout-price">
+
+    </div>
+<div class="your_plan_checkout">
+  <input/>
+</div>
+
+<div class="button-wrapper">
+<button  class="main-button">
+Pay now
+</button>
+</div>
+  </div>
+
+</section>
+
+ <div id="lottie"></div> 
 
   </main>
 
@@ -55,6 +177,42 @@
 
   </footer> -->
  
+<script>
+const buttons = document.querySelectorAll('.paywall-plan-button');
+// const paywallPlanWrapper = document.querySelectorAll('.paywall-plan-wrapper')
+const yourPlan = document.querySelector('.your_plan');
+const checkoutWrapper = document.querySelector('.your_plan_checkout-price');
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    
+    buttons.forEach(btn => btn.classList.remove('active-plan'));
+    button.classList.add('active-plan');
+
+   yourPlan.style.display = 'block';
+ const wrapperContent = button.querySelector('.paywall-plan-wrapper');
+
+     if (wrapperContent) {
+          checkoutWrapper.innerHTML = wrapperContent.innerHTML;
+        }
+  });
+});
+</script>
+
+
+
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+<script> 
+  lottie.loadAnimation({ 
+    container: document.getElementById('lottie'), 
+    renderer: 'svg', 
+    loop: true, 
+    autoplay: true, 
+    path: 'Lottie.json', // Шлях до вашого JSON-файлу 
+    width: '100%', 
+    height: '100%' 
+  });
+ </script> 
 </body>
 </html>
