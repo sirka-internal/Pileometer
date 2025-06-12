@@ -44,7 +44,18 @@
       <p class="paywall-plan-price-perday">$0.59 / day</p>
   </div>
   </div>
-
+  <div class="paywall-plan-unlock">
+<p class="paywall-plan-unlock-titile">What you unlock:</p>
+<ul class="paywall-plan-list-block">
+  <li class="paywall-plan-list">Unlimited smart scans & visual search</li>
+    <li class="paywall-plan-list">Build suggestions based on your own parts</li>
+      <li class="paywall-plan-list">Real inventory tracking linked to your storage</li>
+ <li class="paywall-plan-list">Export to Rebrickable, CSV & more</li>
+ <li class="paywall-plan-list">Rebuild sets, sell extras</li>
+    </ul>
+    <p class="paywall-plan-days-free">3 days free. Cancel anytime before the trial ends.
+We’ll remind you before any charges — no surprises</p>
+  </div>
 </button>
 <button class="paywall-plan-three-month paywall-plan-button">
   <div class="paywall-plan-wrapper">
@@ -67,16 +78,18 @@
 <p>The smart builder’s choice</p>
     </span>
   </div>
-  <div class="paywall-plan-three-month-about">
-<p class="paywall-plan-three-month-about-titile">What you unlock:</p>
-<ul class="paywall-plan-three-month-list-block">
-  <li class="paywall-plan-three-month-list">Unlimited smart scans & visual search</li>
-    <li class="paywall-plan-three-month-list">Build suggestions based on your own parts</li>
-      <li class="paywall-plan-three-month-list">Real inventory tracking linked to your storage</li>
- <li class="paywall-plan-three-month-list">Export to Rebrickable, CSV & more</li>
- <li class="paywall-plan-three-month-list">Rebuild sets, sell extras</li>
- <li class="paywall-plan-three-month-list bold">Share with up to 6 family members — no extra cost</li>
+  <div class="paywall-plan-unlock">
+<p class="paywall-plan-unlock-titile">What you unlock:</p>
+<ul class="paywall-plan-list-block">
+  <li class="paywall-plan-list">Unlimited smart scans & visual search</li>
+    <li class="paywall-plan-list">Build suggestions based on your own parts</li>
+      <li class="paywall-plan-list">Real inventory tracking linked to your storage</li>
+ <li class="paywall-plan-list">Export to Rebrickable, CSV & more</li>
+ <li class="paywall-plan-list">Rebuild sets, sell extras</li>
+ <li class="paywall-plan-list bold">Share with up to 6 family members — no extra cost</li>
     </ul>
+       <p class="paywall-plan-days-free">3 days free. Cancel anytime before the trial ends.
+We’ll remind you before any charges — no surprises</p>
   </div>
 </button>
 <button class="paywall-plan-year paywall-plan-button">
@@ -99,6 +112,18 @@
 <img src="/img/ic_round-check.svg" alt="round-check">
 <p>Best value for active builders</p>
     </span>
+  </div>
+    <div class="paywall-plan-unlock">
+<p class="paywall-plan-unlock-titile">What you unlock:</p>
+<ul class="paywall-plan-list-block">
+  <li class="paywall-plan-list">Unlimited smart scans & visual search</li>
+    <li class="paywall-plan-list">Build suggestions based on your own parts</li>
+      <li class="paywall-plan-list">Real inventory tracking linked to your storage</li>
+ <li class="paywall-plan-list">Export to Rebrickable, CSV & more</li>
+ <li class="paywall-plan-list">Rebuild sets, sell extras</li>
+    </ul>
+       <p class="paywall-plan-days-free">3 days free. Cancel anytime before the trial ends.
+We’ll remind you before any charges — no surprises</p>
   </div>
 </button>
 
@@ -216,27 +241,60 @@ Pay now
 </script>
   </footer>
  
+
 <script>
 const buttons = document.querySelectorAll('.paywall-plan-button');
 const checkoutWrapper = document.querySelector('.your_plan_checkout-price');
-
 let selectedPlanHTML = '';
 
-buttons.forEach(button => {
-  button.addEventListener('click', () => {
-    buttons.forEach(btn => btn.classList.remove('active-plan'));
-    button.classList.add('active-plan');
+function showUnlockContent(button) {
+  const unlock = button.querySelector('.paywall-plan-unlock');
+  if (unlock) {
+    unlock.style.display = 'block';
+    const height = unlock.scrollHeight + 'px';
+    unlock.style.maxHeight = height;
+    unlock.style.opacity = '1';
+  }
+}
 
-    const wrapperContent = button.querySelector('.paywall-plan-wrapper');
-    if (wrapperContent) {
-      selectedPlanHTML = wrapperContent.innerHTML;
+function hideUnlockContent(button) {
+  const unlock = button.querySelector('.paywall-plan-unlock');
+  if (unlock) {
+    unlock.style.maxHeight = '0';
+    unlock.style.opacity = '0';
+  }
+}
 
-      if (checkoutWrapper) {
-        checkoutWrapper.innerHTML = selectedPlanHTML;
-      }
-      localStorage.setItem('selectedPlan', selectedPlanHTML);
-    }
+function resetButtons() {
+  buttons.forEach(btn => {
+    btn.classList.remove('active-plan');
+    hideUnlockContent(btn);
   });
+}
+
+function handleButtonClick(button) {
+  resetButtons();
+  button.classList.add('active-plan');
+  showUnlockContent(button);
+
+  const wrapperContent = button.querySelector('.paywall-plan-wrapper');
+  if (wrapperContent) {
+    selectedPlanHTML = wrapperContent.innerHTML;
+    localStorage.setItem('selectedPlan', selectedPlanHTML);
+
+    if (checkoutWrapper) {
+      checkoutWrapper.innerHTML = selectedPlanHTML;
+    }
+  }
+}
+
+const defaultButton = buttons[1];
+if (defaultButton) {
+  handleButtonClick(defaultButton);
+}
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => handleButtonClick(button));
 });
 
 const continueBtn = document.querySelector('.main-button');

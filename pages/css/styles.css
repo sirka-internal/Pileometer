@@ -209,7 +209,7 @@ padding: 30px 20px;
 text-align: left;
 position: relative;
 }
-.paywall-plan-three-month-list::before {
+.paywall-plan-list::before {
   content: '';
   position: absolute;
   left: 0;
@@ -242,11 +242,24 @@ vertical-align: middle;
 .paywall-plan-ckeck-block {
   display: flex;
   gap: 10px;
+
 }
-.paywall-plan-three-month-about {
+.paywall-plan-unlock {
   margin-top: 30px;
+  text-align: left;
+ max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease, max-height 0.3s ease;
 }
-.paywall-plan-three-month-about-titile {
+.paywall-plan-button.active-plan .paywall-plan-unlock {
+  max-height: 100px; /* або скільки треба */
+  opacity: 1;
+}
+.paywall-plan-days-free {
+  margin-top: 15px;
+}
+.paywall-plan-unlock-titile {
 font-weight: 500;
 font-size: 16px;
 line-height: 110.00000000000001%;
@@ -254,13 +267,13 @@ letter-spacing: 0;
 vertical-align: middle;
 
 }
-.paywall-plan-three-month-list-block {
+.paywall-plan-list-block {
 margin-top: 15px;
 display: flex;
 flex-direction: column;
 gap: 10px;
 }
-.paywall-plan-three-month-list {
+.paywall-plan-list {
   padding-left: 16px;
 font-weight: 300;
 font-size: 16px;
@@ -351,10 +364,10 @@ vertical-align: middle;
 .paywall-plan-ckeck-list {
     font-size: 18px;
 }
-.paywall-plan-three-month-about-titile {
+.paywall-plan-unlock-titile {
     font-size: 18px;
 }
-.paywall-plan-three-month-list {
+.paywall-plan-list {
     font-size: 18px;
 }
 .paywall-plan-then {
