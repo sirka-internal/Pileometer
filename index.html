@@ -1440,12 +1440,26 @@ $(document).ready(function(){
 });
 </script>
 <script>
-  function logScreenWidth() {
-  console.log(`ScreenWidth: ${window.innerWidth}px`);
-}
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.main-button');
 
-window.addEventListener('resize', logScreenWidth);
-logScreenWidth(); // одразу показати
+    const isGithubPages = window.location.hostname.includes('github.io');
+
+    // Автоматично визначає назву репозиторію (перший сегмент шляху)
+    const repoName = isGithubPages ? window.location.pathname.split('/')[1] : '';
+
+    buttons.forEach(button => {
+      const originalHref = button.getAttribute('href');
+
+      if (originalHref.startsWith('pages/')) {
+        const newHref = isGithubPages
+          ? `/${repoName}/${originalHref}`
+          : originalHref;
+
+        button.setAttribute('href', newHref);
+      }
+    });
+  });
 </script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
 </body>

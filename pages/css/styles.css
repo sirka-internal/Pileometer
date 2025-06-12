@@ -31,6 +31,26 @@ max-width: 600px;
 margin-left: auto;
 margin-right: auto;
 }
+@media (min-width: 1440px) {
+  .container {
+    padding-left: 0px;
+padding-right: 0px;
+max-width: 900px;
+}
+}
+@media (min-width: 1920px) {
+  .container {
+max-width: 1038px;
+}
+}
+
+
+.footer-container {
+padding-left: 20px;
+padding-right: 20px;
+margin-left: auto;
+margin-right: auto;
+}
 
 /*main button*/
 .main-button { 
@@ -182,6 +202,20 @@ border: 1px solid #000000;
 border-radius: 20px;
 padding: 30px 20px;
 text-align: left;
+position: relative;
+}
+.paywall-plan-three-month-list::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  background: #000000; 
+  font-size: 1em; 
+  line-height: 1;
+  border-radius: 50%;
 }
 .paywall-plan-wrapper {
   display: flex;
@@ -193,6 +227,12 @@ text-align: left;
 display: flex;
 flex-direction: column;
   gap: 5px;
+font-weight: 300;
+font-size: 16px;
+line-height: 110.00000000000001%;
+letter-spacing: 0;
+vertical-align: middle;
+
 }
 .paywall-plan-ckeck-block {
   display: flex;
@@ -222,7 +262,7 @@ font-size: 16px;
 line-height: 110.00000000000001%;
 letter-spacing: 0;
 vertical-align: middle;
-
+position: relative;
 }
 .bold {
 font-weight: 700;
@@ -269,6 +309,92 @@ letter-spacing: 0;
 vertical-align: middle;
 
 }
+
+ @media (min-width: 1440px) {
+  .footer-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+.paywall-title {
+    text-align: center;
+    font-size: 42px;
+
+}
+.paywall-choose {
+    text-align: center;
+    font-size: 22px;
+}
+.paywall-plan-name-title {
+    font-size: 22px;
+    text-align: left;
+}
+.paywall-plan-name-description {
+    font-size: 18px;
+}
+.paywall-plan-price-title {
+    font-size: 18px;
+}
+.paywall-plan-price-perday {
+    font-size: 20px;
+
+}
+.paywall-plan-ckeck-list {
+    font-size: 18px;
+}
+.paywall-plan-three-month-about-titile {
+    font-size: 18px;
+}
+.paywall-plan-three-month-list {
+    font-size: 18px;
+}
+.paywall-plan-then {
+  font-size: 18px;
+}
+
+
+ }
+@media (min-width: 1920px) {
+    .footer-container {
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+.header-logo {
+  width: 188px;
+}
+.hero-paywall-banner {
+  padding-top: 12px;
+}
+.header-button {
+font-size: 18px;
+width: auto;
+height: auto;
+padding: 16px 38px;
+}
+.paywall-plan {
+  margin-top: 58px;
+}
+    .paywall-title {
+        font-size: 48px;
+    }
+    .paywall-choose {
+        font-size: 32px;
+    }
+    .paywall-plan-name-title {
+        font-size: 28px;
+    }
+    .paywall-plan-name-description {
+        font-size: 24px;
+    }
+    .paywall-plan-price-title {
+        font-size: 20px;
+    }
+    .paywall-plan-price-perday {
+        font-size: 24px;
+    }
+
+    
+}
+
 
 
 /*footer*/
