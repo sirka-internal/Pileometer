@@ -31,11 +31,22 @@ max-width: 600px;
 margin-left: auto;
 margin-right: auto;
 }
+.thankyou-container {
+padding-left: 20px;
+padding-right: 20px;
+max-width: 860px;
+margin-left: auto;
+margin-right: auto;
+}
 @media (min-width: 1440px) {
   .container {
     padding-left: 0px;
 padding-right: 0px;
 /* max-width: 900px; */
+}
+  .thankyou-container {
+    padding-left: 0px;
+padding-right: 0px;
 }
 }
 @media (min-width: 1920px) {
@@ -152,7 +163,11 @@ margin-top: 15px;
 }
 .paywall-plan-button {
 position: relative;
+cursor: pointer;
 }
+/* .paywall-plan-button:hover {
+  scale: 105%;
+} */
 .paywall-plan-block {
   margin-top: 20px;
   margin-bottom: 30px;
@@ -643,3 +658,92 @@ padding: 70px;
 
    }
 
+
+
+   /*thank you */
+   .thankyou {
+    margin-top: 30px;
+   }
+   .thankyou-title {
+font-weight: 500;
+font-size: 26px;
+line-height: 1.1;
+letter-spacing: 0;
+vertical-align: middle;
+
+   }
+
+.thankyou-subtitle {
+font-weight: 400;
+font-size: 20px;
+line-height: 110.00000000000001%;
+letter-spacing: 0%;
+vertical-align: middle;
+color: #00C742;
+margin-top: 15px;
+margin-bottom: 40px;
+}
+.thankyou-sms-notification {
+  margin-top: 40px;
+  text-align: center;
+}
+.thankyou-sms-notification-text {
+font-weight: 300;
+font-size: 16px;
+line-height: 1.1;
+letter-spacing: 0;
+text-align: center;
+vertical-align: middle;
+margin-top: 10px;
+}
+@media (min-width: 768px) {  
+.thankyou {
+    text-align: center;
+}
+}
+
+@media (min-width: 1024px) {  
+.thankyou {
+    margin-top: 40px;
+}
+.thankyou-title {
+    font-size: 30px;
+}
+}
+@media (min-width: 1440px) {  
+.thankyou {
+    margin-top: 70px;
+}
+.thankyou-title {
+    font-size: 48px;
+}
+.thankyou-subtitle {
+  font-size: 32px;
+  margin-top: 15px;
+  margin-bottom: 40px;
+
+}
+.thankyou-button-wrapper {
+  width: 599px;
+}
+.thankyou-button {
+font-weight: 700;
+font-size: 22px;
+line-height: 120%;
+letter-spacing: 0;
+text-transform: uppercase;
+padding: 21px 0;
+}
+.thankyou-sms-notification {
+  margin-top: 100px;
+}
+.thankyou-sms-notification img {
+  width: 80px;
+  height: 80px;
+}
+.thankyou-sms-notification-text {
+  font-size: 24px;
+}
+
+
+}

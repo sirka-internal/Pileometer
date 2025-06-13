@@ -31,45 +31,20 @@
   <main>
 
 
-<section class="your_plan container">
-  <h2 class="your_plan_title">Your Plan</h2>
-  <div class="your_plan_checkout-wrapper">
-    <div class="your_plan_checkout-price">
+<section class="thankyou thankyou-container">
+  <h2 class="thankyou-title">Welcome to Pile[o]meter – You’re In!</h2>
+<p class="thankyou-subtitle">Your collection’s new superpowers are just one click away.</p>
 
-    </div>
-      <div class="paywall-plan-ckeck-list">
-    <span class="paywall-plan-ckeck-block">
-<img src="/img/ic_round-check.svg" alt="round-check">
-<p>Save 25% vs monthly</p>
-    </span>
-        <span class="paywall-plan-ckeck-block">
-<img src="/img/ic_round-check.svg" alt="round-check">
-<p>The smart builder’s choice</p>
-    </span>
-  </div>
-<div class="your_plan_checkout">
-  <input/>
+<div class="button-wrapper thankyou-button-wrapper">
+<a href="" class="main-button thankyou-button">
+Open Pile[o]meter Web App
+</a>
 </div>
-  <div class="paywall-plan-ckeck-list">
-    <span class="paywall-plan-ckeck-block">
-<img src="/img/ic_round-check.svg" alt="round-check">
-<p>3 days free. Cancel anytime before the trial ends.</p>
-    </span>
-        <span class="paywall-plan-ckeck-block">
-<img src="/img/ic_round-check.svg" alt="round-check">
-<p>We’ll remind you before any charges — no surprises.</p>
-    </span>
-    <span class="paywall-plan-ckeck-block">
-      <p class="paywall-plan-then">(Then $40.48 after 3 days if not canceled)</p>
-    </span>
-  </div>
-<div class="button-wrapper">
-<button  class="main-button">
-Pay now
-</button>
+  
+<div class="thankyou-sms-notification">
+    <img src="..//img/sms-notification-svgrepo-com 1.svg" alt="email">
+    <p class="thankyou-sms-notification-text">We’ve also sent your login details to your email – just in case.</p>
 </div>
-  </div>
-
 </section>
 
 
@@ -101,16 +76,6 @@ Pay now
 
   </footer>
  
-<script>
-  window.addEventListener('DOMContentLoaded', () => {
-    const checkoutWrapper = document.querySelector('.your_plan_checkout-price');
-    const selectedPlan = localStorage.getItem('selectedPlan');
-
-    if (selectedPlan && checkoutWrapper) {
-      checkoutWrapper.innerHTML = selectedPlan;
-    }
-  });
-</script>
 
 </body>
 </html>
