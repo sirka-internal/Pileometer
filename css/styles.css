@@ -6,6 +6,9 @@
 *, *::before, *::after {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body{
     font-family: "DM Sans", sans-serif;
 }
@@ -209,7 +212,11 @@ text-transform: uppercase;
 color: #FFFFFF;
 cursor: pointer;
 }
-.header-button:hover,:focus {
+.header-button:hover {
+  background: #404040;
+
+}
+.header-button:focus {
   background: #404040;
 
 }
@@ -911,7 +918,7 @@ letter-spacing: 0;
 vertical-align: middle;
 color: #00C742;
 }
-.ai-scaner-image-wrapper {
+/* .ai-scaner-image-wrapper {
     margin-top: 20px;
 width: 100%;
 display: flex;
@@ -920,9 +927,46 @@ display: flex;
 .ai-scaner-image {
     width: 295px;
 }
-
+*/
 .ai-scaner-image-desktop {
   display:none;
+} 
+   #lottie { 
+position: relative;
+z-index: 1;
+  width: 295px; /* тут міняти розмір щоб підігнати потреби */ 
+  max-width: 373px; /* Обмеження максимальної ширини */ 
+  aspect-ratio: 373 / 744; /* Зберігає пропорцію */ 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  background: transparent; 
+  border-radius: 39px; 
+  border: 2px solid #ffffff; 
+  overflow: hidden;  
+}
+
+.lottie-wrapper {
+  width: 295px;
+  max-width: 373px;
+  margin-top: 20px;
+margin-left: auto;
+margin-right: auto;
+  position: relative;
+z-index: 1;
+margin-bottom: 31px;
+}
+.lottie-wrapper::after {
+    content: "";
+    position: absolute;
+    top: 9px;
+    left: -9px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid black;
+    border-radius: 40px;
+    z-index: 0;
+    pointer-events: none;
 }
 @media (min-width: 466px) { 
 
@@ -958,6 +1002,33 @@ text-align: center;
     display: flex;
     flex-direction: column-reverse;
 }
+   #lottie { 
+position: relative;
+z-index: 1;
+  width: 270px; /* тут міняти розмір щоб підігнати потреби */ 
+  max-width: 373px; /* Обмеження максимальної ширини */ 
+  aspect-ratio: 373 / 744; /* Зберігає пропорцію */ 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  background: transparent; 
+  border-radius: 39px; 
+  border: 2px solid #ffffff; 
+  overflow: hidden;  
+}
+
+.lottie-wrapper {
+  width: 270px;
+  max-width: 373px;
+  margin-top: 20px;
+margin-left: auto;
+margin-right: auto;
+  position: relative;
+z-index: 1;
+margin-bottom: 31px;
+}
+
+
 .ai-scaner-image-desktop{
 height: 450px;
 padding-left: 50px;
@@ -1045,6 +1116,34 @@ padding-left: 50px;
         font-size: 21px;
         margin-top: 20px;
     }
+    .ai-scaner-subtitle {
+font-weight: 400;
+font-size: 25px;
+line-height: 120%;
+letter-spacing: 0;
+vertical-align: middle;
+margin-left: -20px;
+    margin-right: -20px;
+}
+   #lottie { 
+  width: auto;
+  max-width: 700px;
+  height: 650px;
+}
+
+.lottie-wrapper {
+   width: auto;
+  max-width: 700px;
+  height: 650px;
+  margin-top: 0px;
+margin-bottom: 31px;
+}
+
+
+
+
+
+
  }
    @media (min-width: 1920px) { 
 .ai-scaner {
@@ -1069,7 +1168,7 @@ letter-spacing: 0;
 vertical-align: middle;
 margin-left: -20px;
     margin-right: -20px;
-    margin-top: 20px;
+    margin-top: 0px;
 }
     .ai-scaner-left-block {
         margin-top: 110px;
@@ -1082,8 +1181,22 @@ margin-left: -20px;
         font-size: 24px;
         margin-top: 40px;
     }
+   #lottie { 
+  width: auto;
+  max-width: 700px;
+  height: 850px;
+}
 
-
+.lottie-wrapper {
+   width: auto;
+  max-width: 700px;
+  height: 850px;
+  margin-top: 0px;
+margin-bottom: 37px;
+}
+.ai-scaner-title {
+    letter-spacing: 2px;
+}
    }
 
 /*brick-mess*/
@@ -2351,6 +2464,55 @@ letter-spacing: 0;
     width: calc(33.333% - 10px);
   }
 
+.modal-content {
+    padding: 70px;
+    max-width: 995px;
+    width: 995px;
+    max-height: auto;
+    overflow-y: auto;
+}
+.modal-template-title {
+    font-size: 32px;
+    line-height: 1.1;
+    text-align: center;
+}
+.modal-template-subtitle {
+    margin-top: 20px;
+    font-size: 26px;
+    line-height: 1.1;
+    text-align: center;
+}
+.modal-template-list-image {
+  width: 67px;
+  height: 67px;
+}
+.modal-template-list-title {
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.1;
+}
+.modal-template-list-description {
+    font-size: 24px;
+ }
+ .modal-button-wrapper {
+  width: 528px;
+  
+ }
+.modal-button {
+font-weight: 700;
+font-size: 22px;
+line-height: 1.1;
+text-transform: uppercase;
+padding: 20.6px 0;
+}
+#modal-body {
+margin-bottom: 50px;
+}
+.modal-template-list-wrapper {
+    margin-top: 40px;
+    gap: 40px;
+}
+
 
  }
    @media (min-width: 1920px) { 
@@ -2782,13 +2944,15 @@ display: flex;
         margin-right: -80px;
     }   
     .game-changer-title-wrapper-span {
-  padding: 53px;
+          padding: 53.6px 51.4px 53.4px 53.9px;
 }
     .game-changer-title {
         font-size: 40px;
+        line-height: 1.1;
+    letter-spacing: 1px;
     }
     .game-changer-text-wrapper {
-        width: 820px;
+        /* width: 820px; */
     }
         .game-changer-block-party-stars {
         width: 244px;
@@ -2807,6 +2971,13 @@ display: flex;
     margin-top: 5px;
 }
 
+    .game-changer-quote-down, .game-changer-quote-up {
+        width: 68.5px;
+        height: 68.5px;
+    }
+    .game-changer-title-wrapper {
+        width: 820px;
+    }
 
    }
 
@@ -3189,8 +3360,8 @@ border-right: none;
       display: inline-block;
     }
     .table-container {
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-left: 40px;
+      padding-right: 40px;
     }
     .table-title {
       display: none
@@ -3773,7 +3944,9 @@ height: 65px;
     margin-right: 20px;
 }
 
-
+.slider-box {
+    margin-top: 100px;
+}
 
 
    }
@@ -3827,6 +4000,11 @@ height: 80px;
 .svg-marquee-slider {
 margin-bottom: 40px;
 }
+
+
+
+
+
    }
 
     /*faq*/
@@ -4101,7 +4279,7 @@ text-decoration: none;
 .scroll-to-top.sticky {
   position: fixed;
   bottom: 2rem;
-  right: 40px;
+  right: 1rem;
   top: auto;
 }
 .footer-bg {
@@ -4115,7 +4293,9 @@ text-decoration: none;
     object-fit: fill;
 }
 
-
+   .footer-list-link a {
+      color: #000000;
+    }
 
 
  @media (min-width: 466px) { 
@@ -4153,7 +4333,9 @@ flex-direction: row;
     flex-direction: row;
     gap: 10px;
 }
-
+.scroll-to-top.sticky {
+  right: 40px;
+}
 
    }
   @media (min-width: 1440px) {
@@ -4189,6 +4371,17 @@ height: 350px;
      .footer-policy-wraper {
         gap: 50px;
     }
+    .scroll-to-top {
+    top: 80px;
+    right: 41px;
+    }
+.scroll-to-top img {
+width: 80px;
+height: 80px;
+}
+
+
+
 
    }
   @media (min-width: 1920px) { 
@@ -4215,12 +4408,20 @@ padding: 70px;
     .footer-list-link {
         font-size: 24px;
     }
+ 
     .footer-list-link-wraper {
         margin-top: 10px;
     }
         .footer-policy-wraper {
         margin-top: 53px;
         }
+    .scroll-to-top {
+    top: 100px;
+    right: 81px;
+    }
+    .scroll-to-top.sticky {
+        right: 81px;
+    }
 
 
    }
