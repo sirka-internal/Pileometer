@@ -151,7 +151,7 @@ margin-top: 15px;
 
 }
 .paywall-plan-button {
-
+position: relative;
 }
 .paywall-plan-block {
   margin-top: 20px;
@@ -327,7 +327,24 @@ letter-spacing: 0;
 vertical-align: middle;
 
 }
-
+.most_popular {
+  background: #F558ED;
+  color: #FFFFFF;
+position: absolute;
+top: -13px;
+    right: 20px;
+border-radius: 19px;
+padding: 5px 10px;
+}
+.best {
+  background: #FFEE00;
+  color: #000000;
+position: absolute;
+top: -13px;
+    right: 20px;
+border-radius: 19px;
+padding: 5px 10px;
+}
 @media (min-width: 768px) {
 .button-wrapper {
     width: 60%;
