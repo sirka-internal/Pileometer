@@ -143,7 +143,7 @@ We’ll remind you before any charges — no surprises</p>
 </div>
 
 <div class="button-wrapper">
-<button  class="main-button">
+<button  class="main-button" id="rcButton">
 Continue to Payment
 </button>
 </div>
@@ -290,12 +290,23 @@ function handleButtonClick(button) {
       checkoutWrapper.innerHTML = selectedPlanHTML;
     }
   }
+
+    const rcPackages = window.rcPackages;
+    const packagesDictionary = {
+        "paywall-plan-month": 0,
+        "paywall-plan-three-month": 1,
+        "paywall-plan-year": 2
+    }
+
+    for (const className of button.classList) {
+        if (packagesDictionary.hasOwnProperty(className)) {
+            localStorage.setItem("selectedPackage", JSON.stringify(rcPackages[packagesDictionary[className]]));
+            return;
+        }
+    }
 }
 
-const defaultButton = buttons[1];
-if (defaultButton) {
-  handleButtonClick(defaultButton);
-}
+
 
 buttons.forEach(button => {
   button.addEventListener('click', () => handleButtonClick(button));

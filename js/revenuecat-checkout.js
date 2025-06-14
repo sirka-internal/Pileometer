@@ -13698,20 +13698,27 @@
   M(ke, "instance");
   var an = ke;
 
-  // js/main.js
+  // js/main-checkout.js
   var WEB_BILLING_PUBLIC_API_KEY = "rcb_sb_UhNhXZvSKjzHVKDyRqzhbSzkO";
-  var appUserId = Math.floor(Math.random() * 1e6).toString();
-  localStorage.setItem("appUserId", appUserId);
-  var buttons = document.querySelectorAll(".paywall-plan-button");
-  async function initPurchases() {
+  var appUserId = localStorage.getItem("appUserId") || Math.floor(Math.random() * 1e6).toString();
+  async function initCheckout() {
     an.configure(WEB_BILLING_PUBLIC_API_KEY, appUserId);
-    const offerings = await an.getSharedInstance().getOfferings();
-    const rcPackages = offerings.all.pileometer_pro_new_subscription.availablePackages;
-    window.rcPackages = rcPackages;
-    const defaultButton = buttons[1];
-    if (defaultButton) {
-      handleButtonClick(defaultButton);
+    const rcPackage = JSON.parse(localStorage.getItem("selectedPackage"));
+    const target = document.getElementById("rcTarget");
+    try {
+      console.log(rcPackage);
+      const { customerInfo } = await an.getSharedInstance().purchase({
+        rcPackage,
+        htmlTarget: target
+      });
+      if (Object.keys(customerInfo.entitlements.active).includes("Pileometer Pro")) {
+        console.log("Pro content unlocked");
+        window.location.href = "/pages/thankyou.html";
+      }
+    } catch (e) {
+      console.error("Purchase error:", e);
+      alert(e);
     }
   }
-  initPurchases();
+  initCheckout();
 })();

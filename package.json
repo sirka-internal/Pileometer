@@ -4,7 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx esbuild js/main-checkout.js --bundle --outfile=js/revenuecat-checkout.js && npx esbuild js/main.js --bundle --outfile=js/revenuecat.js"
   },
   "repository": {
     "type": "git",

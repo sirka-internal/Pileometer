@@ -319,6 +319,17 @@ margin-top: 20px;
   display: flex;
   justify-content: space-between;
 }
+
+.your_plan_checkout {
+    display: block;
+    height: 80vh;
+}
+
+.your_plan_checkout > * {
+    display: flex;
+    flex-direction: column;
+}
+
 .paywall-plan-then {
 font-weight: 800;
 font-size: 14px;

@@ -1,8 +1,8 @@
-Edit js/main.js to change SDK configuration
+Edit `js/main.js` or `js/main-checkout.js` to change SDK configuration
 
-After you're done, execute:
+After you're done editing, execute to apply changes:
 ```
-npx esbuild js/main.js --bundle --outfile=js/revenuecat.js
+npm run build
 ```
 
-Use the `js/revenuecat.js` across the app.
+Use the `js/revenuecat-*.js` files across the app.
