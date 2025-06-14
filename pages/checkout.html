@@ -34,7 +34,7 @@
 <section class="your_plan container">
   <h2 class="your_plan_title">Your Plan</h2>
   <div class="your_plan_checkout-wrapper">
-    <div class="your_plan_checkout-price">
+    <!-- <div class="your_plan_checkout-price">
 
     </div>
       <div class="paywall-plan-ckeck-list">
@@ -46,11 +46,16 @@
 <img src="/img/ic_round-check.svg" alt="round-check">
 <p>The smart builder’s choice</p>
     </span>
-  </div>
-<div class="your_plan_checkout">
-  <input/>
+  </div> -->
+
+
+<div style="height: 100vh;" class="your_plan_checkout" id="rcTarget">
+  
 </div>
-  <div class="paywall-plan-ckeck-list">
+
+
+
+  <!-- <div class="paywall-plan-ckeck-list">
     <span class="paywall-plan-ckeck-block">
 <img src="/img/ic_round-check.svg" alt="round-check">
 <p>3 days free. Cancel anytime before the trial ends.</p>
@@ -67,7 +72,7 @@
 <button  class="main-button">
 Pay now
 </button>
-</div>
+</div> -->
   </div>
 
 </section>
@@ -100,7 +105,7 @@ Pay now
 
 
   </footer>
- 
+ <script src="/js/revenuecat-checkout.js"></script>
 <script>
   window.addEventListener('DOMContentLoaded', () => {
     const checkoutWrapper = document.querySelector('.your_plan_checkout-price');

@@ -194,7 +194,6 @@ Pay now
 
   <footer class="footer footer-container">
     <div class="footer-wrapper">
-    <button id="scrollTopBtn" class="scroll-to-top">
       <img src="/img/ep_arrow-up-fixy.svg" alt=""></button>
     <div class="footer-background">
       <a href="/"><img class="footer-logo" src="/img/logo.svg" alt="logo"></a>
@@ -219,8 +218,8 @@ Pay now
   <img class="footer-bg" src="/img/bg_mobile_footer.svg" alt="banner background">
 </picture>
     </div>
-
-    <script>
+<script src="/js/revenuecat.js"></script>
+    <!-- <script>
   const footer = document.querySelector('.footer');
   const scrollBtn = document.getElementById('scrollTopBtn');
 
@@ -242,11 +241,11 @@ Pay now
   scrollBtn.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
-</script>
+</script> -->
   </footer>
  
 
-<script>
+<!-- <script>
 const buttons = document.querySelectorAll('.paywall-plan-button');
 const checkoutWrapper = document.querySelector('.your_plan_checkout-price');
 let selectedPlanHTML = '';
@@ -307,6 +306,83 @@ if (continueBtn) {
     window.location.href = 'checkout.html';
   });
 }
+</script> -->
+
+<script>
+const buttons = document.querySelectorAll('.paywall-plan-button');
+const checkoutWrapper = document.querySelector('.your_plan_checkout-price');
+let selectedPlanHTML = '';
+
+function showUnlockContent(button) {
+  const unlock = button.querySelector('.paywall-plan-unlock');
+  if (unlock) {
+    unlock.style.display = 'block';
+    const height = unlock.scrollHeight + 'px';
+    unlock.style.maxHeight = height;
+    unlock.style.opacity = '1';
+  }
+}
+
+function hideUnlockContent(button) {
+  const unlock = button.querySelector('.paywall-plan-unlock');
+  if (unlock) {
+    unlock.style.maxHeight = '0';
+    unlock.style.opacity = '0';
+  }
+}
+
+function resetButtons() {
+  buttons.forEach(btn => {
+    btn.classList.remove('active-plan');
+    hideUnlockContent(btn);
+  });
+}
+
+function handleButtonClick(button) {
+  resetButtons();
+  button.classList.add('active-plan');
+  showUnlockContent(button);
+
+  const wrapperContent = button.querySelector('.paywall-plan-wrapper');
+  if (wrapperContent) {
+    selectedPlanHTML = wrapperContent.innerHTML;
+    localStorage.setItem('selectedPlan', selectedPlanHTML);
+
+    if (checkoutWrapper) {
+      checkoutWrapper.innerHTML = selectedPlanHTML;
+    }
+  }
+
+    const rcPackages = window.rcPackages;
+    const packagesDictionary = {
+        "paywall-plan-month": 0,
+        "paywall-plan-three-month": 1,
+        "paywall-plan-year": 2
+    }
+
+    for (const className of button.classList) {
+        if (packagesDictionary.hasOwnProperty(className)) {
+            localStorage.setItem("selectedPackage", JSON.stringify(rcPackages[packagesDictionary[className]]));
+            return;
+        }
+    }
+}
+
+
+
+buttons.forEach(button => {
+  button.addEventListener('click', () => handleButtonClick(button));
+});
+
+const continueBtn = document.querySelector('.main-button');
+if (continueBtn) {
+  continueBtn.addEventListener('click', () => {
+    window.location.href = 'checkout.html';
+  });
+}
+setTimeout(() => {
+    console.log(window.offerings)
+}, 2000)
 </script>
 
 </body>

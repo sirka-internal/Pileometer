@@ -1,0 +1,25 @@
+{
+  "name": "pileometer",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npx esbuild js/main-checkout.js --bundle --outfile=js/revenuecat-checkout.js && npx esbuild js/main.js --bundle --outfile=js/revenuecat.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sirka-internal/Pileometer.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sirka-internal/Pileometer/issues"
+  },
+  "homepage": "https://github.com/sirka-internal/Pileometer#readme",
+  "description": "",
+  "dependencies": {
+    "@revenuecat/purchases-js": "^1.5.3"
+  }
+}

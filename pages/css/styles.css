@@ -165,9 +165,9 @@ margin-top: 15px;
 position: relative;
 cursor: pointer;
 }
-/* .paywall-plan-button:hover {
-  scale: 105%;
-} */
+.paywall-plan-button:hover {
+  background-color: #d6d6d6;
+}
 .paywall-plan-block {
   margin-top: 20px;
   margin-bottom: 30px;
@@ -331,6 +331,22 @@ line-height: 110.00000000000001%;
 letter-spacing: 0;
 vertical-align: middle;
 
+}
+
+.your_plan_checkout {
+    display: block;
+    height: 100vh;
+}
+/* .your_plan_checkout {
+    display: block;
+    min-height: 700px;
+    height: 100%;
+} */
+
+
+.your_plan_checkout > * {
+    display: flex;
+    flex-direction: column;
 }
 .your_plan_checkout-wrapper {
 border-radius: 20px;
@@ -756,4 +772,15 @@ padding: 21px 0;
 }
 
 
+}
+
+/* revenue cat*/
+.rcb-ui-navbar {
+    background-color: #fff !important;
+}
+.layout-wrapper-outer {
+  background-color: #fff !important;
+}
+.layout-content {
+  background-color: #fff !important;
 }
